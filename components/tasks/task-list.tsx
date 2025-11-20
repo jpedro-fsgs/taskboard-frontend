@@ -42,6 +42,7 @@ export function TaskList() {
       toast('Erro ao carregar tarefas', {
         // variant: 'destructive',
       })
+      console.error(error)
     } finally {
       setIsLoading(false)
     }
@@ -154,6 +155,8 @@ export function TaskList() {
         onClose={() => setIsCreateDialogOpen(false)}
         onSuccess={fetchTasks}
         tasks={tasks}
+        defaultParentId={""}
+        parentLocked={true}
       />
     </div>
   )

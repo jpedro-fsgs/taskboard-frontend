@@ -25,13 +25,13 @@ export function TaskItem({ task, tasks, onUpdate, level }: TaskItemProps) {
     const handleToggleDone = async () => {
         try {
             const response = await fetch(apiUrl('/api/tasks/set-done'), {
-                method: "POST",
+                method: "PATCH",
                 headers: {
                     "Content-Type": "application/json",
                 },
                 credentials: "include",
                 body: JSON.stringify({
-                    task_id: task.id,
+                    id: task.id,
                     is_done: !task.is_done,
                 }),
             });
@@ -47,6 +47,7 @@ export function TaskItem({ task, tasks, onUpdate, level }: TaskItemProps) {
             toast("Erro ao atualizar tarefa", {
                 // variant: 'destructive',
             });
+            console.error(error);
         }
     };
 
@@ -71,6 +72,7 @@ export function TaskItem({ task, tasks, onUpdate, level }: TaskItemProps) {
             toast("Erro ao excluir tarefa", {
                 // variant: 'destructive',
             });
+            console.error(error);
         }
     };
 
@@ -162,6 +164,7 @@ export function TaskItem({ task, tasks, onUpdate, level }: TaskItemProps) {
                 onSuccess={onUpdate}
                 tasks={tasks}
                 defaultParentId={task.id}
+                parentLocked={true}
             />
         </div>
     );
