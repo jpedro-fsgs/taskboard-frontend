@@ -1,36 +1,25 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Taskboard Frontend
 
-## Getting Started
+Frontend da aplicação Taskboard — uma interface web para gerenciar tarefas e quadros de tarefas.
 
-First, run the development server:
+**Descrição:**
+- Projeto frontend construído com Next.js e TypeScript, organizado com a nova estrutura de `app/`. Fornece telas de autenticação (login/registro) e uma área principal para visualização e manipulação de tarefas.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+**Funcionalidades principais:**
+- Autenticação básica (login e registro) — formulários e fluxos de UI.
+- Listagem e exibição de tarefas com componentes reutilizáveis.
+- Componentes de interface (botões, inputs, diálogos, cartões, skeletons) prontos para compor a aplicação.
+- Design modular: componentes organizados por domínio (`components/auth`, `components/tasks`, `components/ui`).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Stack e tecnologias:**
+- Next.js (app router) + React
+- TypeScript
+- PostCSS para processamento de estilos
+- Arquitetura baseada em componentes e hooks
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Visão geral da estrutura do repositório:**
+- `app/` — rotas e páginas da aplicação (inclui `login`, `register`, `tasks`).
+- `components/` — componentes UI e de domínio (autenticação, lista de tarefas, elementos reutilizáveis).
+- `hooks/` — hooks customizados (ex.: `use-mobile`).
+- `lib/` — utilitários e helpers.
+- `public/` e `styles/` — ativos estáticos e estilos globais.
