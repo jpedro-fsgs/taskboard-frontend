@@ -21,7 +21,7 @@ export function RegisterForm() {
     const [isLoading, setIsLoading] = useState(false);
     const [formData, setFormData] = useState({
         name: "",
-        email: "",
+        username: "",
         password: "",
     });
 
@@ -89,16 +89,16 @@ export function RegisterForm() {
                         />
                     </div>
                     <div className="space-y-2">
-                        <Label htmlFor="email">Email</Label>
+                        <Label htmlFor="username">Nome de usuário</Label>
                         <Input
-                            id="email"
-                            type="email"
-                            placeholder="seu@email.com"
-                            value={formData.email}
+                            id="username"
+                            type="text"
+                            placeholder="seu_usuario"
+                            value={formData.username}
                             onChange={(e) =>
                                 setFormData({
                                     ...formData,
-                                    email: e.target.value,
+                                    username: e.target.value,
                                 })
                             }
                             required
