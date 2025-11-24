@@ -34,14 +34,10 @@ export function TaskList() {
         const data = await response.json()
         setTasks(data.items.filter((task: Task) => !task.deleted_at))
       } else {
-        toast('Erro ao carregar tarefas', {
-          // variant: 'destructive',
-        })
+          toast.error('Erro ao carregar tarefas')
       }
     } catch (error) {
-      toast('Erro ao carregar tarefas', {
-        // variant: 'destructive',
-      })
+      toast.error('Erro ao carregar tarefas')
       console.error(error)
     } finally {
       setIsLoading(false)

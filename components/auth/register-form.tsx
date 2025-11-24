@@ -17,7 +17,6 @@ import { apiUrl } from '@/lib/utils'
 
 export function RegisterForm() {
     const router = useRouter();
-    // const { toast } = useToast()
     const [isLoading, setIsLoading] = useState(false);
     const [formData, setFormData] = useState({
         name: "",
@@ -39,21 +38,19 @@ export function RegisterForm() {
             });
 
             if (response.ok) {
-                toast("Conta criada com sucesso!", {
+                toast.success("Conta criada com sucesso!", {
                     description: "Faça login para continuar",
                 });
                 router.push("/login");
             } else {
                 const error = await response.json();
-                toast("Erro ao criar conta", {
+                toast.error("Erro ao criar conta", {
                     description: error.message || "Tente novamente",
-                    // variant: "destructive",
                 });
             }
         } catch (error) {
-            toast("Erro ao criar conta", {
+            toast.error("Erro ao criar conta", {
                 description: "Ocorreu um erro inesperado",
-                // variant: "destructive",
             });
             console.error("Register error:", error);
         } finally {

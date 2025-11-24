@@ -38,7 +38,6 @@ export function CreateTaskDialog({
     tasks,
     defaultParentId,
 }: CreateTaskDialogProps) {
-    // const { toast } = useToast()
     const [isLoading, setIsLoading] = useState(false);
     const [formData, setFormData] = useState({
         title: "",
@@ -74,7 +73,7 @@ export function CreateTaskDialog({
             });
 
             if (response.ok) {
-                toast("Tarefa criada com sucesso!", {});
+                toast.success("Tarefa criada com sucesso!");
                 setFormData({
                     title: "",
                     description: "",
@@ -83,14 +82,10 @@ export function CreateTaskDialog({
                 onSuccess();
                 onClose();
             } else {
-                toast("Erro ao criar tarefa", {
-                    // variant: "destructive",
-                });
+                toast.error("Erro ao criar tarefa");
             }
         } catch (error) {
-            toast("Erro ao criar tarefa", {
-                // variant: "destructive",
-            });
+            toast.error("Erro ao criar tarefa");
             console.error(error);
         } finally {
             setIsLoading(false);

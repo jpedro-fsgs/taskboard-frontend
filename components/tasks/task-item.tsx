@@ -19,7 +19,6 @@ interface TaskItemProps {
 export function TaskItem({ task, tasks, onUpdate, level }: TaskItemProps) {
     const [isExpanded, setIsExpanded] = useState(true);
     const [isCreateDialogOpen, setIsCreateDialogOpen] = useState(false);
-    // const { toast } = useToast()
     const hasChildren = task.children && task.children.length > 0;
 
     const handleToggleDone = async () => {
@@ -39,14 +38,10 @@ export function TaskItem({ task, tasks, onUpdate, level }: TaskItemProps) {
             if (response.ok) {
                 onUpdate();
             } else {
-                toast("Erro ao atualizar tarefa", {
-                    // variant: 'destructive',
-                });
+                toast.error("Erro ao atualizar tarefa");
             }
         } catch (error) {
-            toast("Erro ao atualizar tarefa", {
-                // variant: 'destructive',
-            });
+            toast.error("Erro ao atualizar tarefa");
             console.error(error);
         }
     };
@@ -61,17 +56,13 @@ export function TaskItem({ task, tasks, onUpdate, level }: TaskItemProps) {
             });
 
             if (response.ok) {
-                toast("Tarefa excluída", {});
+                toast.success("Tarefa excluída");
                 onUpdate();
             } else {
-                toast("Erro ao excluir tarefa", {
-                    // variant: 'destructive',
-                });
+                toast.error("Erro ao excluir tarefa");
             }
         } catch (error) {
-            toast("Erro ao excluir tarefa", {
-                // variant: 'destructive',
-            });
+            toast.error("Erro ao excluir tarefa");
             console.error(error);
         }
     };

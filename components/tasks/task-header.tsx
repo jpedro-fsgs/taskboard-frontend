@@ -8,7 +8,6 @@ import { apiUrl } from '@/lib/utils'
 
 export function TaskHeader() {
     const router = useRouter();
-    // const { toast } = useToast()
 
     const handleLogout = async () => {
         try {
@@ -18,16 +17,14 @@ export function TaskHeader() {
             });
 
             if (response.ok) {
-                toast("Logout realizado", {
+                toast.success("Logout realizado", {
                     description: "Até logo!",
                 });
                 router.push("/login");
                 router.refresh();
             }
         } catch (error) {
-            toast("Erro ao fazer logout", {
-                // variant: 'destructive',
-            });
+            toast.error("Erro ao fazer logout");
             console.error("Logout error:", error);
         }
     };

@@ -33,22 +33,20 @@ export function LoginForm() {
       })
 
       if (response.ok) {
-        toast('Login realizado com sucesso!', {
+        toast.success('Login realizado com sucesso!', {
           description: 'Redirecionando...',
         })
         router.push('/tasks')
         router.refresh()
       } else {
         const error = await response.json()
-        toast('Erro ao fazer login', {
+        toast.error('Erro ao fazer login', {
           description: error.message || 'Credenciais inválidas',
-          // variant: 'destructive',
         })
       }
     } catch (error) {
-      toast('Erro ao fazer login', {
+      toast.error('Erro ao fazer login', {
         description: 'Ocorreu um erro inesperado',
-        // variant: 'destructive',
       })
       console.error('Login error:', error)
     } finally {
