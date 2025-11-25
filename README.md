@@ -23,3 +23,49 @@ Frontend da aplicação Taskboard — uma interface web para gerenciar tarefas e
 - `hooks/` — hooks customizados (ex.: `use-mobile`).
 - `lib/` — utilitários e helpers.
 - `public/` e `styles/` — ativos estáticos e estilos globais.
+
+## Como executar localmente
+
+- Instalar dependências:
+
+```bash
+npm install
+```
+
+- Rodar em modo desenvolvimento:
+
+```bash
+npm run dev
+```
+
+- Build e iniciar em produção:
+
+```bash
+npm run build
+npm run start
+```
+
+- Requisitos / observações:
+  - Recomenda-se Node.js 18+.
+  - Garanta que o backend (API) esteja rodando e acessível; a aplicação faz requisições para rotas em `/api/*`.
+  - Defina a URL da API como a váriavel de ambiente NEXT_PUBLIC_API_URL
+
+## Screenshots
+
+Exemplos da interface (imagens presentes na pasta `public/`):
+
+- Cadastro
+
+![Cadastro](public/screenshot-cadastro.png)
+
+- Login
+
+![Login](public/screenshot-login.png)
+
+- Minhas Tarefas (criação)
+
+![Minhas Tarefas 1](public/screenshot-tasks-1.png)
+
+- Minhas Tarefas (visualização)
+
+![Minhas Tarefas 2](public/screenshot-tasks-2.png)
